@@ -1,0 +1,90 @@
+!!! 5
+html
+	head
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		
+		link(rel="stylesheet", href="/static/normalize.css")
+		link(rel='stylesheet', href="/static/ministries-style.css")
+		
+		script(src="/static/js/prefixfree.min.js")
+		script(src="http://code.jquery.com/jquery-1.9.1.min.js")
+		script(src="/static/js/ministries.js")
+		
+		title District
+	body
+		header
+			span.dto
+				a(href="#", onclick="backToTop()") dto
+			span.dtonombre 
+				a(href="#", onclick="backToTop()") chicamocha
+			nav
+				ul
+					li {{ username }}, 
+					li
+						a(href="{% url auth_logout %}") Salir
+		section#content
+			section#dropbox
+				article#files
+					div#wraptitles
+						div.droptitles.name-col Nombre
+						div.droptitles.date-col Última modificación
+						div.upload
+							form(action="/", enctype="multipart/form-data", id="upload_form", method="POST")
+								{% csrf_token %}
+								div.upload-button Subir
+								{{ uploadFileform.file }} 
+					ul
+						for file in files
+							li
+								div.file-name-col
+									img(src="/static/img/{{file.icon}}.png", class="file-icon")
+									a(href="{{ file.url }}", target="_blank")
+										{{ file.name }}
+								div.file-date-col
+									{{ file.modified }}
+								div.file-download-col
+									div.download-button
+										a(href="{{ file.downloadurl|add:'?dl=1' }}", target="_blank") Descargar
+										p.top
+										p.bottom {{ file.size }}
+			aside#events
+				h3 Alertas de {% now "E" %}
+				section
+					ul
+						for event in events
+							li 
+								div.event-day
+									span {{ event.date_from|date:"j" }}
+									span {{ event.date_from|date:"D"}}
+								div.event
+									a(href="#openModal", data-title="{{ event.title }}", data-dayname='{{ event.date_from|date:"l" }}', data-hour='{{ event.date_from|date:"H:i" }}', data-day='{{ event.date_from|date:"j" }}') 
+										{{ event.title }} 
+			#htmlcalendar
+				table
+					caption {% now "E Y" %}
+					tr
+						th Dom
+						th Lun
+						th Mar
+						th Mie
+						th Jue
+						th Vie
+						th Sab
+					{% for week in htmlcalendar %}
+					tr
+						{% for day, event_by_day, day_class in week %}
+						td(class="day {{ day_class }}")
+							span {{ day }}
+							{% if event_by_day|length >= 2 %}
+							{% endif %}
+							{% for ev in event_by_day %}
+							div
+								a(href="#openModal", data-title="{{ ev.title }}", data-dayname='{{ ev.date_from|date:"l" }}', data-hour='{{ ev.date_from|date:"H:i" }}', data-day='{{ ev.date_from|date:"j" }}') 
+										{{ ev.title }} 
+							{% endfor %}
+						{% endfor %}
+					{% endfor %}
+
+			#openModal.modal-dialog
+
+

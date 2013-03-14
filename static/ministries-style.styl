@@ -1,0 +1,597 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700'")
+
+body
+	font-family 'Roboto Condensed', Arial, sans-serif
+	font-size 16px
+	overflow auto
+	text-align	center
+
+caption
+	color #555
+	font-size 1.5em
+	text-transform uppercase
+
+form
+	position relative
+
+header
+	background linear-gradient(180deg, #7adaff 0%, #60cdf8 44%, #40b6ee 100%)
+	box-shadow 0 3px 10px rgba(0, 0, 0, 0.5) 
+	height 3.3em
+	left 0
+	position fixed
+	text-align justify
+	top 0
+	width 100%
+	z-index 10
+	&:after
+		content ''
+		display inline-block
+		width 100%
+
+img
+	vertical-align middle
+	width 2.5em
+
+input[type="submit"]
+	border-radius 0.6em
+	margin-top	0.4em
+	width 23.5em
+
+li
+	a
+		text-decoration none
+		white-space nowrap
+
+nav 
+	display inline-block
+	margin 0 0.5em
+	vertical-align bottom
+
+	ul
+		margin 0.41em 0
+
+	li
+		color rgb(250, 250, 250)
+		display inline-block
+
+	a
+		color rgb(250, 250, 250)
+		font-size 1.2em
+
+table
+	margin 1em auto
+	table-layout fixed
+	width 99%
+
+td
+	border 1px solid rgb(221,221,221)
+	color #555
+	height 6em
+	overflow hidden
+	text-align right
+	vertical-align top
+	width 14.2%
+
+th
+	background #555
+	border 1px solid #eee
+	color #eee
+	height 3em
+	text-transform uppercase
+
+ul
+	list-style none
+	padding 0
+
+#content
+	margin-top 4.3em
+
+
+#dropbox
+	width 59%
+
+	a
+		vertical-align middle
+
+#dropbox, #events
+	border 1px solid #ddd
+	display inline-block
+	max-height 30em
+	min-height 20em
+	vertical-align top
+
+#events
+	background #f0f0f0
+	width 40%
+
+	h3
+		background #fa8072
+		border-bottom 1px solid #ef4423
+		box-shadow 0 1px white
+		color white
+		font-weight normal
+		margin 0
+		padding 0.8em 0
+		text-shadow 1px 1px 2px rgba(0,0,0,0.5)
+		width 100%
+
+	ul
+		margin 0
+
+	li
+		border-bottom 1px solid #d2d2d2
+		box-shadow 0 1px white 
+		height 4em
+		line-height 4em
+		margin 0
+		overflow-x auto
+		overflow-y hidden
+		text-align left
+
+	a
+		color #888
+		font-size 1.1em
+		text-shadow 0 2px 1px white
+
+#files
+	max-height 30em
+	min-height 20em
+
+	ul
+		margin 0
+		max-height 26em
+		min-height 16em
+		overflow-x hidden
+		overflow-y auto
+		position relative
+
+	li
+		border-bottom 1px solid #edf1f5
+		border-top 1px solid #edf1f5
+		height 4em
+		margin-bottom -1px
+		text-align left
+		white-space nowrap
+		z-index 1
+
+		&:hover
+			background #fafdff
+			border-color #c6d8e4
+
+#htmlcalendar
+	margin-top 3em
+
+	ul
+		margin 0 0 0 0.5em
+		max-height 4.7em
+		max-width 10em
+		overflow auto
+
+	li
+		height 3em
+		overflow auto
+
+#wraptitles
+	background #f0f9ff
+	border-bottom 1px solid #96c4ea
+	border-top 1px solid #82cffa
+	box-shadow 0 2px 3px rgba(0,0,0,0.1)
+	height 3.3em
+	text-align left
+	white-space nowrap
+	width 100%
+
+.close
+	background #606061
+	border-radius 1.4em
+	box-shadow 1px 1px 3px black
+	color white
+	font-weight bold
+	line-height 2em
+	position absolute
+	right -1.4em
+	text-align center
+	top -1.5em
+	width 2em
+
+	&:hover
+		background #00d9ff
+
+.day
+	white-space nowrap
+
+	& div
+		background rgba(255,255,255,0.5)
+		margin-bottom 0.5em
+		overflow hidden
+
+	& span
+		font-size 1.5em
+
+	&.today
+		background #92D8F7
+
+		a
+			color #0767A8
+			text-decoration none
+	&.cal-event-day
+		background #f0f0f0
+		
+		a
+			color rgb(250, 128, 114)
+			text-decoration none
+
+.download-button
+
+	&:active
+		a
+			background linear-gradient(180deg,  rgb(0, 195, 250) 36%,#009ec3 100%)
+		p.top
+			margin-top -2.2em
+
+		p.bottom
+			margin-top -1.5em
+
+	a
+		background linear-gradient(180deg, #00b7ea 0%,#009ec3 100%)
+		border-radius 0.6em
+		box-shadow 0px 2px 2px rgba(0,0,0,0.2)
+		color white
+		display block
+		height 2em
+		line-height 2em
+		position relative
+		text-align center
+		text-transform uppercase
+		width 8em
+		z-index 3
+
+	p
+		background #222
+		border-radius 0.3em
+		color white
+		display block
+		height 2em
+		line-height 2.5em
+		margin -2em 0 0 0.5em
+		position absolute
+		text-align center
+		transition all 0.1s ease
+		width 7em
+		z-index 2
+
+	&:hover > .top
+		margin-top -2.5em
+
+	&:hover > .bottom
+		margin-top -0.5em
+
+.droptitles
+	display inline-block
+	padding 1em
+	text-align left
+
+	&.name-col
+		color #1f8ce6
+		text-shadow 1px 1px 1px rgba(0,0,0,0.1)
+		width 50%
+	
+	&.date-col
+		color #1f8ce6
+		text-shadow 1px 1px 1px rgba(0,0,0,0.1)
+		width 20%
+
+.dto
+	transform rotate(-90deg)
+	
+	a
+		font-size 1.5em
+
+.dtonombre
+	margin-left -0.4em
+	text-align left
+	
+	a
+		font-size 2.5em
+
+.dto, .dtonombre
+	color #EEE
+	display inline-block
+	vertical-align middle
+
+	a
+		color rgb(250, 250, 250)
+		font-weight bold
+		text-decoration none
+
+.event
+	width 70%
+
+.event, .event-day
+	display inline-block
+	text-align center
+	vertical-align top
+
+.event-day
+	background white
+	border-right 1px solid white
+	box-shadow -1px 0 1px rgba(0,0,0,0.1) inset
+	color #fa8072
+	font-size 2em
+	height 2em
+	width 15%
+
+	& div
+		width 2em
+
+	& span
+		&:first-child
+			display block
+			height 1.2em
+			line-height 1.2em
+		&:last-child
+			display block
+			height 1em
+			font-size 0.7em
+			line-height 1em
+			text-transform uppercase
+
+.file-date-col
+	width 20%
+	color gray
+
+.file-date-col, .file-name-col
+	display inline-block
+	padding	1em
+	text-align left
+	vertical-align middle
+
+.file-download-col
+	display inline-block
+	vertical-align middle
+	width 18%
+
+.file-name-col
+	overflow auto
+	width 50%
+	a
+		color black
+
+.input-file
+	opacity 0
+	width 8em
+	z-index 1
+
+.modal-dialog
+	background rgba(0, 0, 0, .8)
+	bottom 0
+	left 0
+	opacity 0
+	pointer-events none
+	position fixed
+	right 0
+	top 0
+	transition all 0.5s ease 0s
+	z-index 99999
+
+	div
+		background: linear-gradient(180deg, rgba(255,255,255,1) 0%,rgba(221,221,221,1) 20%,rgba(221,221,221,1) 97%)
+		border-radius 0.3em
+		box-shadow 0px 0px 0 12px rgba(121, 207, 255, 0.57)
+		height 25em
+		margin 10% auto
+		position relative
+		text-shadow 1px 1px 0.3em rgba(0,0,0,0.3)
+		transition all 0.5s ease 0s
+		width 25em
+
+		a
+			text-decoration	none
+	h2
+		font-size 5em
+		margin 0
+
+	h3
+		font-size 1.5em
+		margin -1em 0
+		padding-left 0.2em
+		text-transform capitalize
+
+
+	li
+		border-bottom 1px solid gray
+		box-shadow 0px 1px rgb(255, 255, 255)
+		height 3em
+		line-height 3em
+		margin 0 auto
+		overflow hidden
+		text-align left
+		white-space nowrap
+		width 90%
+
+	section
+		border-bottom 1px solid gray
+		box-shadow 0px 1px rgb(255, 255, 255)
+		height 7.5em
+		margin 0 auto
+		width 90%
+
+	span
+		display inline-block
+
+		&:first-child
+			width 25%
+
+	ul
+		font-size 1.5em
+		height 11em
+		margin 0
+		overflow-y auto
+
+.upload
+	display inline-block
+	line-height 2em
+
+.upload-button
+	background rgb(58,58,58)
+	border-radius 0.6em
+	box-shadow 0px 2px 2px rgba(0,0,0,0.2)
+	color white
+	cursor pointer
+	height 2em
+	line-height 2em
+	position absolute
+	text-align center
+	text-transform uppercase
+	width 8em
+		
+	&.hover
+		background linear-gradient(180deg, rgb(128, 128, 128) 16%,rgb(27, 27, 27) 100%)
+
+@media screen and (max-height:350px)
+	.modal-dialog
+		div
+			height 15em
+
+@media screen and (max-width:350px)
+	.modal-dialog
+		div
+			box-shadow 0px 0px 0 7px rgba(121,207,255,0.57)
+			width 14em !important
+
+		li
+			position relative
+
+		span
+			&:first-child
+				position absolute
+				top -0.5em
+			&:last-child
+				position absolute
+				top 0.5em
+
+
+
+@media screen and (max-width:500px)
+	td
+		height 3em
+		position relative
+
+	.day
+
+		& div
+			background none
+			border none
+			position absolute
+			left 0
+
+
+	.modal-dialog
+		div
+			width 20em
+
+@media screen and (max-width:700px)
+	#dropbox, #events
+		display block
+		width 100%
+
+	#events
+		h3
+			margin 0
+			padding-top 1em
+			width 100%
+
+		li
+			margin 0
+
+	.dto
+		display none
+
+	.dtonombre
+		margin-left 0.4em
+
+	.file-name-col
+		overflow hidden
+		text-overflow ellipsis
+		width 95%
+
+
+	.file-download-col, .upload
+		display none
+
+@media screen and (max-width:950px)
+
+	#dropbox
+		a
+			vertical-align top
+	
+	#files
+		li
+			position relative
+
+	#wraptitles
+		position relative
+
+	.download-button
+		a
+			width 6em
+
+		p
+			width 5em
+
+	.droptitles
+		&.name-col
+			padding 0.4em 0 0 1em
+
+		&.name-col, &.date-col
+			display block
+			width 95%
+
+		&.date-col
+			padding 0 0 1em 1em
+
+	.file-name-col
+		padding 1em 0 0 1em
+		width 70%
+
+	.file-name-col, .file-date-col
+		display block
+
+	.file-date-col
+		margin -1.3em 0 0 2.5em
+		padding 0 0 1em 1em
+		width 82%	
+
+	.file-download-col
+		position absolute
+		right 2em
+		top 1em
+	
+	.upload
+		position absolute
+		right 1em
+		top 0.8em
+
+@media screen and (min-width:951px) and (max-width:1135px)
+
+	.download-button
+		a
+			width 6em
+
+		p
+			width 5em
+
+	.file-name-col, .droptitles.name-col
+		width 45%
+
+	.file-date-col, .droptitles.date-col
+		width 23%
+
+	.input-file, .upload-button
+		width 6em
+	
+
+
+
+
